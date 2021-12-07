@@ -28,7 +28,7 @@ const getUserWithEmail = function(email) {
   .then((result) => {
     if (result.rows) {
       console.log(result.rows)
-      return result.rows[0];
+      return result.rows;
     } else {
       return null;
     }
@@ -45,7 +45,24 @@ exports.getUserWithEmail = getUserWithEmail;
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithId = function(id) {
-  return Promise.resolve(users[id]);
+  const queryString = `
+  SELECT *
+  FROM users
+  WHERE users.id = $1
+  `;
+  const values = [`${id}`];
+  return pool.query(queryString, values)
+  .then((result) => {
+    if (result.rows) {
+      console.log(result.rows)
+      return result.rows;
+    } else {
+      return null;
+    }
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 }
 exports.getUserWithId = getUserWithId;
 
