@@ -23,12 +23,11 @@ const getUserWithEmail = function(email) {
   FROM users
   WHERE email = $1
   `;
-  const values = [`${email}`];
+  const values = [email];
   return pool.query(queryString, values)
   .then((result) => {
     if (result.rows) {
-      console.log(result.rows)
-      return result.rows;
+      return result.rows[0];
     } else {
       return null;
     }
@@ -50,12 +49,11 @@ const getUserWithId = function(id) {
   FROM users
   WHERE users.id = $1
   `;
-  const values = [`${id}`];
+  const values = [id];
   return pool.query(queryString, values)
   .then((result) => {
     if (result.rows) {
-      console.log(result.rows)
-      return result.rows;
+      return result.rows[0];
     } else {
       return null;
     }
@@ -78,11 +76,10 @@ const addUser =  function(user) {
   VALUES ($1, $2, $3)
   RETURNING *;
   `;
-  const values = [`${user.name}`, `${user.email}`, `${user.password}`];
+  const values = [user.name, user.email, user.password];
   return pool.query(queryString, values)
   .then((result) => {
-      console.log(result.rows)
-      return result.rows;
+      return result.rows[0];
   })
   .catch((err) => {
     console.log(err.message);
