@@ -98,13 +98,13 @@ const getAllReservations = function(guest_id, limit = 10) {
   const queryString = `
     SELECT *
     FROM reservations
-    WHERE guest_id = $1
-    LIMIT $2
+    WHERE reservations.guest_id = $1
+    LIMIT $2;
   `;
   const values = [guest_id, limit];
   return pool.query(queryString, values)
   .then((result) => {
-      return result.rows[0];
+      return result.rows;
   })
   .catch((err) => {
     console.log(err.message);
