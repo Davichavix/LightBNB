@@ -18,7 +18,11 @@ $(() => {
   window.propertyListings.clearListings = clearListings;
 
   function addProperties(properties, isReservation = false) {
-    clearListings();
+    if(!isReservation) {
+      clearListings();
+    }
+    getMyDetails()
+    .then() //check promise syntax
     for (const propertyId in properties) {
       const property = properties[propertyId];
       const listing = propertyListing.createListing(property, isReservation);
