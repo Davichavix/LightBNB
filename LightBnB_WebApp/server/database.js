@@ -296,13 +296,15 @@ const deleteReservation = function(reservationId) {
 
 const getIndividualReservation = function(reservationId) {
   const queryString = `
-  SELECT *,
+  SELECT *
   FROM reservations
   WHERE reservations.id = $1
 `;
   const params = [reservationId];
   return pool.query(queryString, params)
-    .then(res => res.rows[0]);
+    .then(res => {
+      console.log(res.rows[0])
+      return res.rows[0]});
 }
 
 exports.getIndividualReservation = getIndividualReservation;
