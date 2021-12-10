@@ -59,6 +59,15 @@ module.exports = function(router, database) {
       });
   });
   
+  // update an existing reservation
+  router.post('/reservations/:reservationId', (req, res) => {
+    const reservationId = req.params.reservationId;
+    database.updateReservation({...req.body, reservation_id: reservationId})
+    .then(reservation => {
+      res.send(reservation)
+    })
+  })
+
   router.post('/reservations', (req, res) => {
     const userId = req.session.userId;
     if (userId) {
