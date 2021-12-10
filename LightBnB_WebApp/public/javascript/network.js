@@ -67,3 +67,10 @@ const submitReservation = function(data) {
     data,
   })
 }
+
+const getIndividualReservation = function(reservationId) {
+  let url = `/api/reservations/${reservationId}`
+  return $.ajax({
+    url,
+  })
+}
