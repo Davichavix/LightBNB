@@ -49,7 +49,7 @@ $(() => {
     propertyListings.clearListings();
     getUpcomingReservations()
       .then(function(json) {
-        propertyListings.addProperties(json.reservations, {upcoming: false});
+        // propertyListings.addProperties(json.reservations, {upcoming: false});
         getUpcomingReservations()
         .then(json => {
           propertyListings.addProperties(json.reservations, {upcoming: true})

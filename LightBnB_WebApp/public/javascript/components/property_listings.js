@@ -22,7 +22,8 @@ $(() => {
       clearListings();
     }
     getMyDetails()
-    .then() //check promise syntax
+    .then()//check promise syntax
+    console.log(properties);
     for (const propertyId in properties) {
       const property = properties[propertyId];
       const listing = propertyListing.createListing(property, isReservation);
@@ -32,9 +33,9 @@ $(() => {
       $('.update-button').on('click', function() {
         const idData = $(this).attr('id').substring(16);
         getIndividualReservation(idData).then(data => {
-          view_manager.show("updateReservation", data);
+          console.log(`update ${idData}`, data);          
+          views_manager.show("updateReservation", data);
         })
-        console.log(`update ${idData}`);          
       })
       $('.delete-button').on('click', function() {
         const idData = $(this).attr('id').substring(16);

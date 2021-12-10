@@ -42,7 +42,7 @@ $(() => {
         break;
       }
       case 'newReservation':
-        const dataTag = `<h4>${data}</h4>`;
+        dataTag = `<h4>${data}</h4>`;
         $newReservationForm.appendTo($main);
         $(dataTag).appendTo("#datatag");
         break;
