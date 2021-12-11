@@ -68,6 +68,14 @@ const submitReservation = function(data) {
   })
 }
 
+const submitReview = function(data) {
+  return $.ajax({
+    method: "POST",
+    url: `api/reviews/${data.reservationId}`,
+    data,
+  })
+}
+
 const updateReservation = function(data) {
   return $.ajax({
     method: "POST",
