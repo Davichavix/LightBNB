@@ -68,6 +68,11 @@ $(() => {
         $(dataTag).appendTo("#datatag");
         $(errorMessage).appendTo('#error-message');
         break;
+        case 'showReviews':
+          getReviewsByProperty(data)
+          .then(reviews => propertyReviews.addReviews(reviews))
+          $propertyReviews.appendTo($main);
+          break;
     }
   }
   
