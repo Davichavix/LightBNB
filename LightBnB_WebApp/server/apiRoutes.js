@@ -9,6 +9,14 @@ module.exports = function(router, database) {
     }); 
   });
 
+  router.get('/reviews/:propertyId', (req, res) => {
+    const propertyId = req.params.propertyId
+    database.getReviewsByProperty(propertyId)
+    .then(reviews => {
+      res.send(reviews);
+    })
+  })
+
   router.get('/reservations/upcoming', (req, res) => {
     const userId = req.session.userId;
     if (!userId) {

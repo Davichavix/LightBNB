@@ -83,6 +83,13 @@ function getIndividualReservation(reservationId) {
   })
 }
 
+const getReviewsByProperty = function(propertyId) {
+  const url = `api/reviews/${propertyId}`;
+  return $.ajax({
+    url,
+  });
+}
+
 const deleteReservation = function(data) {
   return $.ajax({
     method: "DELETE",
