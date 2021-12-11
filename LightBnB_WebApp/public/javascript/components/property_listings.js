@@ -40,7 +40,8 @@ $(() => {
       $('.delete-button').on('click', function() {
         const idData = $(this).attr('id').substring(16);
         deleteReservation(idData)
-        .then(console.log(idData));     
+        .then(console.log(idData));
+        // add refresh function view_manager    
       })
     }
   }
