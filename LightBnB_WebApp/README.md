@@ -1,5 +1,7 @@
 # LightBnB
 
+The purpose of LightBNB is to design a database and use server-side JavaScript to display the information from queries to web pages
+
 ## Database ERD
 LightBNB Database ERD
 !["LightBNB ERD"](https://github.com/Davichavix/LightBNB/blob/main/LightBnB_WebApp/docs/LightBnb_ERD.png?raw=true)
@@ -45,3 +47,24 @@ LightBNB Database ERD
   * `apiRoutes.js` and `userRoutes.js` are responsible for any HTTP requests to `/users/something` or `/api/something`. 
   * `json` is a directory that contains a bunch of dummy data in `.json` files.
   * `database.js` is responsible for all queries to the database. It doesn't currently connect to any database, all it does is return data from `.json` files.
+
+## Getting Started
+
+1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
+2. Clone your repository onto your local device.
+3. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+4. Go to <http://localhost:8080/> in your browser.
+
+## Dependencies
+
+- Express
+- bcrypt
+- cookie-session
+- Node 5.10.x or above
+- node-sass
+- Nodemon
+- body-parser
+- chance
+- md5
+- pg
