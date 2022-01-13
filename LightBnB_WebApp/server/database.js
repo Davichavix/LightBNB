@@ -128,7 +128,7 @@ exports.getFulfilledReservations = getFulfilledReservations;
 
   const queryParams = [];
 
-  let queryString = `SELECT properties.*, avg(property_reviews.rating) as average_rating, count(property_reviews.rating) as review_count
+  let queryString = `SELECT properties.*, avg(property_reviews.rating) as average_rating
   FROM properties
   JOIN property_reviews ON properties.id = property_id
   `;
