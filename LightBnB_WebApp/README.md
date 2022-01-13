@@ -1,5 +1,9 @@
 # LightBnB
 
+## Database ERD
+LightBNB Database ERD
+!["LightBNB ERD"](https://github.com/Davichavix/LightBNB/blob/main/LightBnB_WebApp/docs/LightBnb_ERD.png?raw=true)
+
 ## Project Structure
 
 ```
